@@ -24,4 +24,4 @@
 
 5) Incluir, Editar, Pesquisar e Excluir Carriers
 
-OBS: É permitido um cadastro de rating por usuário, portanto, para cadastrar mais de um rating para um mesmo carrier, é necessário o registro de mais de um usuário.
+OBS: É permitido 1 cadastro de rating por usuário, portanto, para cadastrar mais de um rating para um mesmo carrier, é necessário o registro de mais de um usuário.
