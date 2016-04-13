@@ -1,0 +1,56 @@
+﻿<div ng-controller="carriersListController as model">
+    <h2 class="no-margin  pull-left"> Carriers </h2>
+    <p class="pull-right">
+        &nbsp;
+        <a href="" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="New carrier" ng-click="model.goToNew()">
+            <span class="fa fa-plus fa-lg" aria-hidden="true"></span> New
+        </a>
+    </p>
+
+    <div class="pull-right">
+        <input class="form-control" ng-model="searchText" placeholder="Search">
+    </div>
+
+    <div class="clearfix" />
+    <hr />
+    <span ng-show="model.carriers.length === 0">
+        <p>No records found.</p>
+    </span>
+
+    <section id="table-div" ng-show="model.carriers.length > 0">
+        <table class="table table-striped table-responsive">
+            <thead>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr dir-paginate="item in model.carriers | filter:searchText | orderBy:model.predicate:model.reverse | itemsPerPage: 5">
+                    <td>{{ item.Name }}</td>
+                    <td>{{ item.Description }}</td>
+                    <td class="text-center actions">
+                        
+                        <a href="" ng-click="model.goToEdit(item.Id)" class="btn btn-xs btn-default" data-toggle="tooltip" data-placement="top" title="Editar">
+                            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                        </a>
+                        <a href="" ng-click="model.goToDelete(item.Id, item.Name)" class="btn btn-xs btn-default" data-toggle="tooltip" data-placement="top" title="Desativar">
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <dir-pagination-controls max-size="5"
+                             direction-links="true"
+                             boundary-links="true">
+    </dir-pagination-controls>
+
+</div>

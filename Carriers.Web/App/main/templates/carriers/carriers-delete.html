@@ -1,0 +1,13 @@
+﻿<div ng-controller="carriersDeleteController as model">
+    <h2 class="no-margin"> Delete Carrier </h2>
+    <br />
+    <hr />
+    <div>
+        <h4>Are you sure you want to delete the carrier {{ model.name }} ? </h4>
+        <br />
+    </div>
+    <div class="text-right">
+        <button class="btn btn-default" ng-click="model.goToList()">Cancel</button>
+        <button class="btn btn-danger" ng-click="model.confirmDelete()">Delete Item</button>
+    </div>
+</div>

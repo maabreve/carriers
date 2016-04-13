@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carriers.Model", "Carriers.Models\Carriers.Model.csproj", "{F89D9319-C431-4528-8BC3-61A0118659A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carriers.Data", "Carriers.Data\Carriers.Data.csproj", "{A73472F2-999D-4572-A45B-445D00008FC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carriers.Web", "Carriers.Web\Carriers.Web.csproj", "{F10ED981-9B48-48AC-939C-65148472462E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F89D9319-C431-4528-8BC3-61A0118659A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F89D9319-C431-4528-8BC3-61A0118659A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F89D9319-C431-4528-8BC3-61A0118659A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F89D9319-C431-4528-8BC3-61A0118659A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A73472F2-999D-4572-A45B-445D00008FC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A73472F2-999D-4572-A45B-445D00008FC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A73472F2-999D-4572-A45B-445D00008FC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A73472F2-999D-4572-A45B-445D00008FC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F10ED981-9B48-48AC-939C-65148472462E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F10ED981-9B48-48AC-939C-65148472462E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F10ED981-9B48-48AC-939C-65148472462E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F10ED981-9B48-48AC-939C-65148472462E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,78 @@
+﻿<div>
+    <form name="reservaForm" class="form-horizontal" ng-submit="model.submitForm(model, reservaForm.$valid)" novalidate>
+        <div class="modal-header">
+            <h3 class="no-margin-top">Reserva de Anúncios</h3>
+        </div>
+        <div class="modal-body">
+
+            <!-- NAME -->
+            <div class="form-group" ng-class="{ 'has-error' : reservaForm.cliente.$invalid && !reservaForm.cliente.$pristine }">
+                <label class="col-sm-2 control-label">Data:</label>
+                <div class="col-sm-10">
+                    <h4>{{ model.anuncio.data | date : 'dd/MM/yyyy'}}</h4>
+                </div>
+            </div>
+
+            <div class="form-group" ng-class="{ 'has-error' : reservaForm.cliente.$invalid && !reservaForm.cliente.$pristine }">
+                <label class="col-sm-2 control-label">Produto:</label>
+                <div class="col-sm-10">
+                    <h4>{{ model.anuncio.titulo }}</h4>
+                </div>
+            </div>
+            <hr />
+            <div class="form-group" ng-class="{ 'has-error' : submitted && model.cliente.Name.Id === undefined }">
+                <label class="col-sm-2 control-label">Cliente: </label>
+                <div class="col-sm-10">
+                    <input id="cliente" name="cliente"
+                           type="text"
+                           required
+                           placeholder="Cliente"
+                           ng-model="model.cliente.Name"
+                           typeahead="cliente as cliente.Name for cliente in model.clientes |
+                                    filter:$viewValue | limitTo:8"
+                           class="form-control">
+                    <span class="help-inline red" ng-show="submitted && model.cliente.Name.Id === undefined">Favor informar um cliente válido</span>
+                </div>
+            </div>
+
+            <div class="form-group" ng-class="{ 'has-error' : submitted && model.agencia.Name.Id === undefined }">
+                <label class="col-sm-2 control-label">Agência: </label>
+                <div class="col-sm-10">
+                    <input name="agencia"
+                           type="text"
+                           required
+                           placeholder="Agência"
+                           ng-model="model.agencia.Name"
+                           typeahead="agencia as agencia.Name for agencia in model.agencias |
+                                    filter:$viewValue | limitTo:8"
+                           class="form-control">
+                    <span class="help-inline red" ng-show="submitted && model.agencia.Name.Id === undefined">Favor informar uma agência válida</span>
+                </div>
+            </div>
+
+            <div class="form-group" ng-class="{ 'has-error' : submitted && model.usuario.Name.Id === undefined }">
+                <label class="col-sm-2 control-label">Comercial: </label>
+                <div class="col-sm-10">
+                    <input name="comercial"
+                           type="text"
+                           required
+                           placeholder="Comercial"
+                           ng-model="model.usuario.Name"
+                           typeahead="usuario as usuario.Name for usuario in model.usuarios |
+                                    filter:$viewValue | limitTo:8"
+                           class="form-control">
+                    <span class="help-inline red" ng-show="submitted && model.usuario.Name.Id === undefined">Favor informar um comercial válido</span>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-warning" type="button" ng-click="$dismiss()">
+                <span class="fa fa-close"></span> Cancelar
+            </button>
+            <button class="btn btn-success" type="submit" ng-click="submitted=true;">
+                <span class="fa fa-cart-arrow-down"></span> Reservar
+            </button>
+        </div>
+    </form>
+
+</div>
