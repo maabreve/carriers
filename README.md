@@ -23,3 +23,5 @@
 4) Executar o programa e criar um usuário através do link 'Register as a new user'
 
 5) Incluir, Editar, Pesquisar e Excluir Carriers
+
+OBS: É permitido um cadastro de rating por usuário, portanto, para cadastrar mais de um rating para um mesmo carrier, é necessário o registro de mais de um usuário.
