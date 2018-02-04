@@ -1,0 +1,98 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 30px;
+}
+.content {
+    padding: 30px;
+}
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.navbar-brand {
+    font-size: 24px !important;
+}
+
+.table thead > tr > th, .table tbody > tr > th, .table tfoot > tr > th, .table thead > tr > td, .table tbody > tr > td, .table tfoot > tr > td {
+    padding:1px 8px;
+    line-height: 1.428571429;
+    border-top: none;
+    width: auto;
+    height: 30px;
+}
+
+.table thead > tr > th a{
+    color: #657;
+    font-weight: bold;
+}
+
+
+@media only screen and (max-width: 720px) {
+	
+    #table-div table, 
+	#table-div thead, 
+	#table-div tbody, 
+	#table-div th, 
+	#table-div td, 
+	#table-div tr { 
+		display: block; 
+	}
+ 
+	#table-div thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+ 
+	#table-div tr { border: 1px solid #ccc; }
+ 
+	#table-div td { 
+		border: none;
+		position: relative;
+		white-space: normal;
+		text-align:left;
+	}
+ 
+	#table-div td:before { 
+		position: absolute;
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+		text-align:left;
+		font-weight: bold;
+	}
+ 
+	#table-div td:before { content: attr(data-title); }
+}
+
+
+.no-margin{
+    margin-top:0 !important;
+    margin-bottom:0px !important;
+}
+
+.error{
+    color:red;
+}
+
+#map {
+    height: 480px;
+}

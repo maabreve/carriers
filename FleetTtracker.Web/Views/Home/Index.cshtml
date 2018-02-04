@@ -1,0 +1,58 @@
+﻿<div id="map">
+</div>
+@section scripts {
+    <script>
+        function initMap() {
+
+            var url = 'https://localhost:44300/api/tracking';
+            $.get(url, function (data) {
+
+                var locations = [];
+
+                data.forEach(freight => {
+
+                    console.log(freight);
+
+                    var location = [];
+                    location.push(freight.Description);
+                    location.push(freight.Lat);
+                    location.push(freight.Lng);
+                    location.push(freight.Id);
+
+                    locations.push(location);
+                });
+
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 7,
+                    center: new google.maps.LatLng(53.288350, -6.242414),
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                });
+
+                var infowindow = new google.maps.InfoWindow({});
+
+                var marker, i;
+
+                for (i = 0; i < locations.length; i++) {
+                    marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                        map: map
+                    });
+
+                    google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                        return function () {
+                            infowindow.setContent(locations[i][0]);
+
+                            infowindow.open(map, marker);
+                        }
+                    })(marker, i));
+                }
+
+            });
+            
+        }
+    </script>
+
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPN-ewsOvR4evHE-WOApTZlbz1GuEY5lU&callback=initMap">
+    </script>
+}
