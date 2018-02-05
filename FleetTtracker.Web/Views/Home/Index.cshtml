@@ -3,7 +3,14 @@
 @section scripts {
     <script>
         function initMap() {
+            start();
+            setInterval(function () {
+                start();
+            }, 5000);
+            
+        }
 
+        function start() {
             var url = 'https://localhost:44300/api/tracking';
             $.get(url, function (data) {
 
@@ -48,7 +55,6 @@
                 }
 
             });
-            
         }
     </script>
 
